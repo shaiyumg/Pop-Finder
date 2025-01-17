@@ -53,6 +53,7 @@ class SignUpScreen: UIViewController, UITextFieldDelegate {
         showAlert(message: "Account created successfully! 🎉", shouldNavigateBack: true)
     }
 
+//Alert function dialouge box
     func showAlert(message: String, shouldNavigateBack: Bool = false) {
         let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
