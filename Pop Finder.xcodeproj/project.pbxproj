@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F65324842D5405AC0057BADB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F65324832D5405AC0057BADB /* FirebaseAuth */; };
+		F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F6DD0FF62D53EAFA00C4D977 /* FirebaseAnalytics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F685CD7C2D36B8030023990C /* Pop Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pop Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,16 +41,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65324842D5405AC0057BADB /* FirebaseAuth in Frameworks */,
+				F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F65324822D5405AC0057BADB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F685CD732D36B8030023990C = {
 			isa = PBXGroup;
 			children = (
 				F685CD7E2D36B8030023990C /* Pop Finder */,
+				F65324822D5405AC0057BADB /* Frameworks */,
 				F685CD7D2D36B8030023990C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +93,8 @@
 			);
 			name = "Pop Finder";
 			packageProductDependencies = (
+				F6DD0FF62D53EAFA00C4D977 /* FirebaseAnalytics */,
+				F65324832D5405AC0057BADB /* FirebaseAuth */,
 			);
 			productName = "Pop Finder";
 			productReference = F685CD7C2D36B8030023990C /* Pop Finder.app */;
@@ -107,6 +124,9 @@
 			);
 			mainGroup = F685CD732D36B8030023990C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F685CD7D2D36B8030023990C /* Products */;
 			projectDirPath = "";
@@ -343,6 +363,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F65324832D5405AC0057BADB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F6DD0FF62D53EAFA00C4D977 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F685CD742D36B8030023990C /* Project object */;
 }
