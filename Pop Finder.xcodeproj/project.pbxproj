@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F62F7D822D5A597700799E13 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F62F7D812D5A597700799E13 /* FirebaseCore */; };
+		F62F7D842D5A597700799E13 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F62F7D832D5A597700799E13 /* FirebaseFirestore */; };
+		F63CB9A32D5A953D0080EE49 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F63CB9A22D5A953D0080EE49 /* FirebaseStorage */; };
+		F63CB9A52D5A953D0080EE49 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F63CB9A42D5A953D0080EE49 /* FirebaseStorageCombine-Community */; };
 		F65324842D5405AC0057BADB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F65324832D5405AC0057BADB /* FirebaseAuth */; };
 		F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F6DD0FF62D53EAFA00C4D977 /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
@@ -42,6 +46,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65324842D5405AC0057BADB /* FirebaseAuth in Frameworks */,
+				F62F7D842D5A597700799E13 /* FirebaseFirestore in Frameworks */,
+				F62F7D822D5A597700799E13 /* FirebaseCore in Frameworks */,
+				F63CB9A32D5A953D0080EE49 /* FirebaseStorage in Frameworks */,
+				F63CB9A52D5A953D0080EE49 /* FirebaseStorageCombine-Community in Frameworks */,
 				F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +103,10 @@
 			packageProductDependencies = (
 				F6DD0FF62D53EAFA00C4D977 /* FirebaseAnalytics */,
 				F65324832D5405AC0057BADB /* FirebaseAuth */,
+				F62F7D812D5A597700799E13 /* FirebaseCore */,
+				F62F7D832D5A597700799E13 /* FirebaseFirestore */,
+				F63CB9A22D5A953D0080EE49 /* FirebaseStorage */,
+				F63CB9A42D5A953D0080EE49 /* FirebaseStorageCombine-Community */,
 			);
 			productName = "Pop Finder";
 			productReference = F685CD7C2D36B8030023990C /* Pop Finder.app */;
@@ -376,6 +388,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F62F7D812D5A597700799E13 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F62F7D832D5A597700799E13 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F63CB9A22D5A953D0080EE49 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		F63CB9A42D5A953D0080EE49 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		F65324832D5405AC0057BADB /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -46,21 +46,37 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "goToSignUp", sender: self)
     }
     
-    // Authenticate user using Firebase
+    // Authenticate user and store username in UserDefaults
     func authenticateUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 let friendlyErrorMessage = self.getFirebaseLoginErrorMessage(error)
                 self.showAlert(message: friendlyErrorMessage)
             } else {
-                self.showAlert(message: "Login Successful! 🎉") {
-                    self.switchToMainScreen()
+                guard let uid = authResult?.user.uid else {
+                    self.showAlert(message: "An error occurred. Please try again.")
+                    return
+                }
+
+                // Fetch username from Firestore after login
+                FirestoreManager.shared.fetchUser(uid: uid) { user in
+                    if let user = user {
+                        print("User logged in: \(user.username)")
+                        
+                        // Store username in UserDefaults for profile access
+                        UserDefaults.standard.set(user.username, forKey: "username")
+                        
+                        self.showAlert(message: "Login Successful!") {
+                            self.switchToMainScreen()
+                        }
+                    } else {
+                        self.showAlert(message: "Failed to retrieve user data.")
+                    }
                 }
             }
         }
     }
     
-    // Switch to main screen after successful login
     func switchToMainScreen() {
         guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
               let window = sceneDelegate.window else { return }
@@ -77,8 +93,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             window.makeKeyAndVisible()
         }
     }
-
-    // Function to reset the password
+    
     func resetPassword(email: String) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
@@ -90,7 +105,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Forgot Password Button Action
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Reset Password", message: "Enter your email to reset your password.", preferredStyle: .alert)
         
@@ -111,7 +125,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         present(alert, animated: true)
     }
     
-    // Function for translating Firebase error codes into user-friendly messages
     func getFirebaseLoginErrorMessage(_ error: Error) -> String {
         let errorCode = (error as NSError).code
         switch errorCode {
@@ -132,7 +145,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Function for showing alerts
     func showAlert(title: String = "Notice", message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
