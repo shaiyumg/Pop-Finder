@@ -61,9 +61,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
                 // Fetch username from Firestore after login
                 FirestoreManager.shared.fetchUser(uid: uid) { user in
                     if let user = user {
-                        print("User logged in: \(user.username)")
-                        
-                        // Store username in UserDefaults for profile access
+                        // Store username in UserDefaults to then display the user in the profile screen
                         UserDefaults.standard.set(user.username, forKey: "username")
                         
                         self.showAlert(message: "Login Successful!") {
