@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F619F46D2D5CE91B00BE07A4 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46C2D5CE91B00BE07A4 /* Cloudinary */; };
+		F619F4702D5CF1FE00BE07A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46F2D5CF1FE00BE07A4 /* SDWebImage */; };
+		F619F4722D5CF1FE00BE07A4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F619F4712D5CF1FE00BE07A4 /* SDWebImageMapKit */; };
 		F62F7D822D5A597700799E13 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F62F7D812D5A597700799E13 /* FirebaseCore */; };
 		F62F7D842D5A597700799E13 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F62F7D832D5A597700799E13 /* FirebaseFirestore */; };
 		F63CB9A32D5A953D0080EE49 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F63CB9A22D5A953D0080EE49 /* FirebaseStorage */; };
@@ -45,7 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F619F46D2D5CE91B00BE07A4 /* Cloudinary in Frameworks */,
+				F619F4722D5CF1FE00BE07A4 /* SDWebImageMapKit in Frameworks */,
 				F65324842D5405AC0057BADB /* FirebaseAuth in Frameworks */,
+				F619F4702D5CF1FE00BE07A4 /* SDWebImage in Frameworks */,
 				F62F7D842D5A597700799E13 /* FirebaseFirestore in Frameworks */,
 				F62F7D822D5A597700799E13 /* FirebaseCore in Frameworks */,
 				F63CB9A32D5A953D0080EE49 /* FirebaseStorage in Frameworks */,
@@ -107,6 +113,9 @@
 				F62F7D832D5A597700799E13 /* FirebaseFirestore */,
 				F63CB9A22D5A953D0080EE49 /* FirebaseStorage */,
 				F63CB9A42D5A953D0080EE49 /* FirebaseStorageCombine-Community */,
+				F619F46C2D5CE91B00BE07A4 /* Cloudinary */,
+				F619F46F2D5CF1FE00BE07A4 /* SDWebImage */,
+				F619F4712D5CF1FE00BE07A4 /* SDWebImageMapKit */,
 			);
 			productName = "Pop Finder";
 			productReference = F685CD7C2D36B8030023990C /* Pop Finder.app */;
@@ -138,6 +147,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F619F46B2D5CE91B00BE07A4 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
+				F619F46E2D5CF1FE00BE07A4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F685CD7D2D36B8030023990C /* Products */;
@@ -377,6 +388,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F619F46B2D5CE91B00BE07A4 /* XCRemoteSwiftPackageReference "cloudinary_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cloudinary/cloudinary_ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		F619F46E2D5CF1FE00BE07A4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
 		F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -388,6 +415,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F619F46C2D5CE91B00BE07A4 /* Cloudinary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F619F46B2D5CE91B00BE07A4 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
+			productName = Cloudinary;
+		};
+		F619F46F2D5CF1FE00BE07A4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F619F46E2D5CF1FE00BE07A4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		F619F4712D5CF1FE00BE07A4 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F619F46E2D5CF1FE00BE07A4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		F62F7D812D5A597700799E13 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

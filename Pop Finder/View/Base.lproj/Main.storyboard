@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -247,27 +247,57 @@
         <!--Library-->
         <scene sceneID="BcN-JM-Vaq">
             <objects>
-                <viewController id="b9I-Oe-d5w" sceneMemberID="viewController">
+                <viewController id="b9I-Oe-d5w" customClass="LibraryScreen" customModule="Pop_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5RL-6I-lHy">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TBA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tj-R4-b0r">
-                                <rect key="frame" x="104" y="322" width="184" height="199"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="lbd-lW-Ddw">
+                                <rect key="frame" x="-119" y="65" width="426" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SoundSeries" translatesAutoresizingMaskIntoConstraints="NO" id="wOt-sp-Z73">
+                                <rect key="frame" x="37" y="187" width="160" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6se-zf-Bpq" userLabel="InkButton">
+                                <rect key="frame" x="228" y="187" width="160" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="inkButtonTapped" destination="b9I-Oe-d5w" eventType="touchUpInside" id="XrA-BE-55E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-Q6-fLY" userLabel="SoundButton">
+                                <rect key="frame" x="37" y="187" width="160" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="soundSeriesTapped" destination="b9I-Oe-d5w" eventType="touchUpInside" id="N1b-Gu-AAr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InkSeries" translatesAutoresizingMaskIntoConstraints="NO" id="KZ1-qy-Wo8">
+                                <rect key="frame" x="228" y="187" width="160" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vLM-g7-p8L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Library" image="book.pages.fill" catalog="system" id="gNb-bI-zjt"/>
+                    <connections>
+                        <outlet property="InkButton" destination="6se-zf-Bpq" id="4q6-Bp-Xq0"/>
+                        <outlet property="InkSeries" destination="KZ1-qy-Wo8" id="CaJ-8S-yeP"/>
+                        <outlet property="SoundButton" destination="BEN-Q6-fLY" id="W0E-v1-gSU"/>
+                        <outlet property="SoundSeries" destination="wOt-sp-Z73" id="CE0-t3-PMc"/>
+                        <segue destination="ZrE-Ns-E4J" kind="showDetail" identifier="showSkullPanda" id="aCQ-6W-x0C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrq-zW-ovU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="701"/>
+            <point key="canvasLocation" x="1806.9767441860465" y="700.42918454935625"/>
         </scene>
         <!--MainScreen-->
         <scene sceneID="Nl2-tl-fWz">
@@ -344,7 +374,7 @@
                                 <rect key="frame" x="131" y="155" width="168" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-b6-Ld1">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM5-b6-Ld1">
                                 <rect key="frame" x="131" y="155" width="168" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -365,7 +395,7 @@
                                     <action selector="logoutTapped:" destination="iNk-OQ-wd0" eventType="touchUpInside" id="duk-9a-qt9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-j0-g1J">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-j0-g1J">
                                 <rect key="frame" x="165" y="299" width="101" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
@@ -393,8 +423,48 @@
             </objects>
             <point key="canvasLocation" x="2690.8396946564885" y="3.5211267605633805"/>
         </scene>
+        <!--SoundSeries-->
+        <scene sceneID="ICG-XI-p4B">
+            <objects>
+                <viewController id="ZrE-Ns-E4J" userLabel="SoundSeries" customClass="SkullPandaController" customModule="Pop_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mZX-KN-Dhe">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="Lqa-Rv-6fP">
+                                <rect key="frame" x="-119" y="65" width="426" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-Dn-VCT" customClass="figurineImageView" customModule="Pop_Finder" customModuleProvider="target">
+                                <rect key="frame" x="108" y="172" width="214" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKULL PANDA NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gA-aJ-Wb4" customClass="figurineNameLabel" customModule="Pop_Finder" customModuleProvider="target">
+                                <rect key="frame" x="129" y="328" width="172" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Om8-fN-MI2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Library" image="book.pages.fill" catalog="system" id="1Qb-HM-1zd"/>
+                    <navigationItem key="navigationItem" id="kIy-kx-y5C"/>
+                    <connections>
+                        <outlet property="figurineImageView" destination="qBD-Dn-VCT" id="tzM-t5-C4z"/>
+                        <outlet property="figurineNameLabel" destination="1gA-aJ-Wb4" id="3T8-Cx-08Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9kN-qk-sUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2593.953488372093" y="699.78540772532199"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="InkSeries" width="1280" height="720"/>
+        <image name="SoundSeries" width="400" height="201"/>
         <image name="book.pages.fill" catalog="system" width="107" height="128"/>
         <image name="camera.shutter.button.fill" catalog="system" width="128" height="108"/>
         <image name="person.2.fill" catalog="system" width="128" height="86"/>

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Figurine {
+struct Figurine: Decodable {
     let id: String
     let name: String
     let imageUrl: String
