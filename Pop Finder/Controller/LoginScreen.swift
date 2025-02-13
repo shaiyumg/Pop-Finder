@@ -9,11 +9,18 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    // Loading Indicator
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Assign delegates
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+                
+        // Setup Loading Indicator
+        setupLoadingIndicator()
     }
     
     // Moves the user automatically to the next text field and triggers login when at the last field
@@ -27,6 +34,11 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             }
         }
         return true
+    }
+
+    // Dismiss keyboard when tapping outside of a text field
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     // Function for when the login button is pressed
@@ -48,7 +60,18 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     // Authenticate user and store username in UserDefaults
     func authenticateUser(email: String, password: String) {
+        
+        // Start loading animation and disable login button
+        loadingIndicator.startAnimating()
+        loginButton.isEnabled = false
+        
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            DispatchQueue.main.async {
+                // Stop loading animation and re-enable login button
+                self.loadingIndicator.stopAnimating()
+                self.loginButton.isEnabled = true
+            }
+            
             if let error = error {
                 let friendlyErrorMessage = self.getFirebaseLoginErrorMessage(error)
                 self.showAlert(message: friendlyErrorMessage)
@@ -64,7 +87,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
                         // Store username in UserDefaults to then display the user in the profile screen
                         UserDefaults.standard.set(user.username, forKey: "username")
                         
-                        self.showAlert(message: "Login Successful!") {
+                        self.showAlert(message: "Login Successful! 🎉") {
                             self.switchToMainScreen()
                         }
                     } else {
@@ -75,6 +98,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Transition to the main screen after login
     func switchToMainScreen() {
         guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
               let window = sceneDelegate.window else { return }
@@ -92,6 +116,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Reset password function
     func resetPassword(email: String) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
@@ -123,6 +148,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         present(alert, animated: true)
     }
     
+    // Convert Firebase errors into user-friendly messages
     func getFirebaseLoginErrorMessage(_ error: Error) -> String {
         let errorCode = (error as NSError).code
         switch errorCode {
@@ -143,11 +169,25 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Display alert messages
     func showAlert(title: String = "Notice", message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             completion?()
         }))
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
+    }
+    
+    // Setup Loading Indicator
+    func setupLoadingIndicator() {
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingIndicator.color = .gray
+        view.addSubview(loadingIndicator)
+        
+        // Center the loading indicator in the view
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 }
