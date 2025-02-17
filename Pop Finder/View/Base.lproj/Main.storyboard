@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-Ll-LHA">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-Ll-LHA">
                                 <rect key="frame" x="121" y="482" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AccentColor"/>
@@ -49,7 +49,7 @@
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5H6-RK-wfo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-WP-oJQ">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-WP-oJQ">
                                 <rect key="frame" x="122" y="561" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -61,7 +61,7 @@
                                     <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CH9-io-vT3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-8m-SLX">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-8m-SLX">
                                 <rect key="frame" x="121" y="424" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -116,20 +116,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huE-Pi-KoF">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huE-Pi-KoF">
                                 <rect key="frame" x="113" y="274" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9A-Vq-ndG">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9A-Vq-ndG">
                                 <rect key="frame" x="113" y="372" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-enter password" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Uw-w0Z">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Uw-w0Z">
                                 <rect key="frame" x="113" y="423" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AccentColor"/>
@@ -150,7 +150,7 @@
                                     <action selector="signUpButtonTapped:" destination="5eS-HG-zHk" eventType="touchUpInside" id="Lgw-AA-eMk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wD2-sX-JbJ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wD2-sX-JbJ">
                                 <rect key="frame" x="113" y="324" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -395,8 +395,19 @@
                                     <action selector="logoutTapped:" destination="iNk-OQ-wd0" eventType="touchUpInside" id="duk-9a-qt9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-j0-g1J">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-j0-g1J">
                                 <rect key="frame" x="165" y="299" width="101" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-WO-9Dy">
+                                <rect key="frame" x="297" y="804" width="28" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ML INSTALLED?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfy-g7-ZkG">
+                                <rect key="frame" x="131" y="804" width="177" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -415,13 +426,15 @@
                     <connections>
                         <outlet property="changePhotoButton" destination="WM5-b6-Ld1" id="Z2q-q8-37U"/>
                         <outlet property="logoutButton" destination="vGk-Kn-bmX" id="3sn-iC-8CJ"/>
+                        <outlet property="mlModelActivityIndicator" destination="Mbu-WO-9Dy" id="v4x-CX-gmT"/>
+                        <outlet property="mlModelStatusLabel" destination="dfy-g7-ZkG" id="ewi-f8-XBL"/>
                         <outlet property="profileImageView" destination="8TL-OT-Lws" id="cMy-YW-chQ"/>
                         <outlet property="usernameLabel" destination="9Sx-j0-g1J" id="yUN-Fp-iMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m98-36-9wR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690.8396946564885" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2690.2325581395348" y="3.218884120171674"/>
         </scene>
         <!--SoundSeries-->
         <scene sceneID="ICG-XI-p4B">
@@ -439,7 +452,7 @@
                                 <rect key="frame" x="108" y="172" width="214" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKULL PANDA NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gA-aJ-Wb4" customClass="figurineNameLabel" customModule="Pop_Finder" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKULL PANDA NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gA-aJ-Wb4" customClass="figurineNameLabel" customModule="Pop_Finder" customModuleProvider="target">
                                 <rect key="frame" x="129" y="328" width="172" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F607720C2D63997B0082ABBA /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = F607720B2D63997B0082ABBA /* FirebaseMLModelDownloader */; };
 		F619F46D2D5CE91B00BE07A4 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46C2D5CE91B00BE07A4 /* Cloudinary */; };
 		F619F4702D5CF1FE00BE07A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46F2D5CF1FE00BE07A4 /* SDWebImage */; };
 		F619F4722D5CF1FE00BE07A4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F619F4712D5CF1FE00BE07A4 /* SDWebImageMapKit */; };
@@ -55,6 +56,7 @@
 				F62F7D842D5A597700799E13 /* FirebaseFirestore in Frameworks */,
 				F62F7D822D5A597700799E13 /* FirebaseCore in Frameworks */,
 				F63CB9A32D5A953D0080EE49 /* FirebaseStorage in Frameworks */,
+				F607720C2D63997B0082ABBA /* FirebaseMLModelDownloader in Frameworks */,
 				F63CB9A52D5A953D0080EE49 /* FirebaseStorageCombine-Community in Frameworks */,
 				F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -116,6 +118,7 @@
 				F619F46C2D5CE91B00BE07A4 /* Cloudinary */,
 				F619F46F2D5CF1FE00BE07A4 /* SDWebImage */,
 				F619F4712D5CF1FE00BE07A4 /* SDWebImageMapKit */,
+				F607720B2D63997B0082ABBA /* FirebaseMLModelDownloader */,
 			);
 			productName = "Pop Finder";
 			productReference = F685CD7C2D36B8030023990C /* Pop Finder.app */;
@@ -415,6 +418,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F607720B2D63997B0082ABBA /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DD0FF52D53EAFA00C4D977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
 		F619F46C2D5CE91B00BE07A4 /* Cloudinary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F619F46B2D5CE91B00BE07A4 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
