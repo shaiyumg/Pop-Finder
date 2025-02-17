@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5D01B5F3F6C3CCBA18F8056 /* Pods_Pop_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06DDA148FC18612AE8AE792 /* Pods_Pop_Finder.framework */; };
 		F607720C2D63997B0082ABBA /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = F607720B2D63997B0082ABBA /* FirebaseMLModelDownloader */; };
 		F619F46D2D5CE91B00BE07A4 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46C2D5CE91B00BE07A4 /* Cloudinary */; };
 		F619F4702D5CF1FE00BE07A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F619F46F2D5CF1FE00BE07A4 /* SDWebImage */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A06DDA148FC18612AE8AE792 /* Pods_Pop_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pop_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B861423671279F15A30962CB /* Pods-Pop Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pop Finder.release.xcconfig"; path = "Target Support Files/Pods-Pop Finder/Pods-Pop Finder.release.xcconfig"; sourceTree = "<group>"; };
+		DEF7EAFADD9A76E3B2D2AB3F /* Pods-Pop Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pop Finder.debug.xcconfig"; path = "Target Support Files/Pods-Pop Finder/Pods-Pop Finder.debug.xcconfig"; sourceTree = "<group>"; };
 		F685CD7C2D36B8030023990C /* Pop Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pop Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,15 +63,26 @@
 				F607720C2D63997B0082ABBA /* FirebaseMLModelDownloader in Frameworks */,
 				F63CB9A52D5A953D0080EE49 /* FirebaseStorageCombine-Community in Frameworks */,
 				F6DD0FF72D53EAFA00C4D977 /* FirebaseAnalytics in Frameworks */,
+				E5D01B5F3F6C3CCBA18F8056 /* Pods_Pop_Finder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F39B952BB01FB664ABDC7B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEF7EAFADD9A76E3B2D2AB3F /* Pods-Pop Finder.debug.xcconfig */,
+				B861423671279F15A30962CB /* Pods-Pop Finder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F65324822D5405AC0057BADB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A06DDA148FC18612AE8AE792 /* Pods_Pop_Finder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +93,7 @@
 				F685CD7E2D36B8030023990C /* Pop Finder */,
 				F65324822D5405AC0057BADB /* Frameworks */,
 				F685CD7D2D36B8030023990C /* Products */,
+				3F39B952BB01FB664ABDC7B9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F685CD8F2D36B8040023990C /* Build configuration list for PBXNativeTarget "Pop Finder" */;
 			buildPhases = (
+				7AA0FEBDBFDE46A0D3E19E68 /* [CP] Check Pods Manifest.lock */,
 				F685CD782D36B8030023990C /* Sources */,
 				F685CD792D36B8030023990C /* Frameworks */,
 				F685CD7A2D36B8030023990C /* Resources */,
+				05D438C905BA3475899A2281 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,6 +191,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05D438C905BA3475899A2281 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pop Finder/Pods-Pop Finder-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pop Finder/Pods-Pop Finder-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pop Finder/Pods-Pop Finder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AA0FEBDBFDE46A0D3E19E68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pop Finder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F685CD782D36B8030023990C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -186,12 +246,14 @@
 /* Begin XCBuildConfiguration section */
 		F685CD902D36B8040023990C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF7EAFADD9A76E3B2D2AB3F /* Pods-Pop Finder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GF37N3UJ4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pop Finder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -218,12 +280,14 @@
 		};
 		F685CD912D36B8040023990C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B861423671279F15A30962CB /* Pods-Pop Finder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GF37N3UJ4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pop Finder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

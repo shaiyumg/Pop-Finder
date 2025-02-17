@@ -1,0 +1,12 @@
+# Ignore Pods directory
+Pods/
+Podfile.lock
+
+# Ignore Xcode user-specific files
+*.xcuserstate
+*.xcscmblueprint
+*.xcworkspace/xcuserdata/
+
+# Ignore build files
+build/
+DerivedData/
