@@ -38,6 +38,11 @@ class SignUpScreen: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    // Dismiss keyboard when tapping outside of a text field
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         let username = usernameTextField.text ?? ""
