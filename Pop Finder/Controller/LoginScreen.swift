@@ -21,6 +21,16 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
                 
         // Setup Loading Indicator
         setupLoadingIndicator()
+        
+        // Disable autofill for username field to avoid UIKit errors
+        usernameTextField.textContentType = .oneTimeCode
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.spellCheckingType = .no
+        
+        // Delay first responder activation (fix keyboard lag)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.usernameTextField.becomeFirstResponder()
+        }
     }
     
     // Moves the user automatically to the next text field and triggers login when at the last field
@@ -169,15 +179,17 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Display alert messages
-    func showAlert(title: String = "Notice", message: String, completion: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+    // Displays an alert message to the user
+    func showAlert(message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             completion?()
-        }))
+        }
+        
+        alert.addAction(okAction)
         present(alert, animated: true)
     }
-    
     // Setup Loading Indicator
     func setupLoadingIndicator() {
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
