@@ -14,7 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //This is required to make Firebase run
         FirebaseApp.configure()
-        
+        MLModelManager.shared.downloadMLModel { path in
+                    if let path = path {
+                        print("Model ready at \(path)")
+                    }
+                }
         return true
     }
 

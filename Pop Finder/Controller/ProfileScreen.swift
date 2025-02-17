@@ -9,6 +9,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var changePhotoButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
 
+    @IBOutlet weak var mlModelStatusLabel: UILabel!
+    @IBOutlet weak var mlModelActivityIndicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +22,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         profileImageView.clipsToBounds = true
 
         loadUserProfile()
+
+        // Start ML Model Download Process
+        mlModelStatusLabel.text = "Checking model..."
+        mlModelActivityIndicator.startAnimating()
+        
+        downloadMLModel()
     }
 
     // Fetches user profile data from Firestore
@@ -38,12 +47,61 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let data = document.data()
                 let username = data?["username"] as? String ?? "No username"
 
-                // Update UI on the main thread
                 DispatchQueue.main.async {
                     self.usernameLabel.text = username
                 }
             }
         }
+    }
+
+    // ML Model Download
+    private func downloadMLModel() {
+        MLModelManager.shared.downloadMLModel { [weak self] path in
+            DispatchQueue.main.async {
+                self?.mlModelActivityIndicator.stopAnimating()
+                if let path = path {
+                    self?.mlModelStatusLabel.text = "ML Model Installed"
+                } else {
+                    self?.mlModelStatusLabel.text = "Failed to Install Model"
+                }
+            }
+        }
+    }
+    //Updates ML Model Progress on Profile Screen
+    @objc private func updateMLModelProgress(_ notification: Notification) {
+            if let progress = notification.userInfo?["progress"] as? Int {
+                DispatchQueue.main.async {
+                    self.mlModelStatusLabel.text = "Downloading Model: \(progress)%"
+                }
+            }
+        }
+    
+    // Opens the image picker for the selected source type (camera or photo library)
+    private func openImagePicker(sourceType: UIImagePickerController.SourceType) {
+        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
+            print("Selected source type is not available.")
+            return
+        }
+
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        imagePicker.allowsEditing = true
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+
+    // UIImagePickerControllerDelegate method to handle the selected image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let selectedImage = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
+            profileImageView.image = selectedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    // UIImagePickerControllerDelegate method to handle cancellation
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 
     // Presents an action sheet for changing the profile picture
@@ -66,36 +124,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         present(alert, animated: true, completion: nil)
     }
 
-    // Opens the image picker for the selected source type (camera or photo library)
-    func openImagePicker(sourceType: UIImagePickerController.SourceType) {
-        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
-            print("Source type not available")
-            return
-        }
-
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = sourceType
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-
-        present(imagePicker, animated: true, completion: nil)
-    }
-
-    // Handles image selection from the image picker
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let editedImage = info[.editedImage] as? UIImage {
-            profileImageView.image = editedImage // Set the edited image as profile picture
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            profileImageView.image = originalImage // Set the original image as profile picture
-        }
-        dismiss(animated: true, completion: nil)
-    }
-
-    // If the user closes the image picker without making changes, sets it back to how it was
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     // Logs out the user and navigates back to the login screen
     @IBAction func logoutTapped(_ sender: UIButton) {
         logOutUser()
