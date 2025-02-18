@@ -7,8 +7,7 @@ class MLModelManager {
         0: "The Serenity",
         1: "The Philosophy",
         2: "The Trust",
-        3: "The Timelapse",
-        4: "Unknown Figurine"
+        3: "The Timelapse"
     ]
     private init() {}
 
