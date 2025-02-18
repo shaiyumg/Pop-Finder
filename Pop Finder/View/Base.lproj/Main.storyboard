@@ -221,13 +221,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRk-hJ-9VQ">
-                                <rect key="frame" x="20" y="59" width="390" height="651"/>
+                                <rect key="frame" x="25" y="69" width="380" height="578"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe down to retake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-ub-yhj">
                                 <rect key="frame" x="131" y="738" width="169" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-Gn-Ayy">
+                                <rect key="frame" x="131" y="674" width="169" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -238,6 +245,7 @@
                     <navigationItem key="navigationItem" id="lTP-H7-9i2"/>
                     <connections>
                         <outlet property="imageView" destination="cRk-hJ-9VQ" id="2EP-wc-j6I"/>
+                        <outlet property="resultLabel" destination="Ici-Gn-Ayy" id="iR8-Cq-zOX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz2-GO-Ktf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,13 +268,13 @@
                                 <rect key="frame" x="37" y="187" width="160" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6se-zf-Bpq" userLabel="InkButton">
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6se-zf-Bpq" userLabel="IORButton">
                                 <rect key="frame" x="228" y="187" width="160" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="inkButtonTapped" destination="b9I-Oe-d5w" eventType="touchUpInside" id="XrA-BE-55E"/>
+                                    <action selector="IORButtonTapped" destination="b9I-Oe-d5w" eventType="touchUpInside" id="BoJ-pP-264"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-Q6-fLY" userLabel="SoundButton">
@@ -278,7 +286,7 @@
                                     <action selector="soundSeriesTapped" destination="b9I-Oe-d5w" eventType="touchUpInside" id="N1b-Gu-AAr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InkSeries" translatesAutoresizingMaskIntoConstraints="NO" id="KZ1-qy-Wo8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IOR" translatesAutoresizingMaskIntoConstraints="NO" id="KZ1-qy-Wo8" userLabel="IOR Series">
                                 <rect key="frame" x="228" y="187" width="160" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -288,8 +296,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Library" image="book.pages.fill" catalog="system" id="gNb-bI-zjt"/>
                     <connections>
-                        <outlet property="InkButton" destination="6se-zf-Bpq" id="4q6-Bp-Xq0"/>
-                        <outlet property="InkSeries" destination="KZ1-qy-Wo8" id="CaJ-8S-yeP"/>
+                        <outlet property="IORButton" destination="6se-zf-Bpq" id="mMK-kY-50U"/>
+                        <outlet property="IORSeries" destination="KZ1-qy-Wo8" id="uPm-s2-pkY"/>
                         <outlet property="SoundButton" destination="BEN-Q6-fLY" id="W0E-v1-gSU"/>
                         <outlet property="SoundSeries" destination="wOt-sp-Z73" id="CE0-t3-PMc"/>
                         <segue destination="ZrE-Ns-E4J" kind="showDetail" identifier="showSkullPanda" id="aCQ-6W-x0C"/>
@@ -476,7 +484,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="InkSeries" width="1280" height="720"/>
+        <image name="IOR" width="467" height="416"/>
         <image name="SoundSeries" width="400" height="201"/>
         <image name="book.pages.fill" catalog="system" width="107" height="128"/>
         <image name="camera.shutter.button.fill" catalog="system" width="128" height="108"/>

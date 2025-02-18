@@ -4,50 +4,49 @@ class LibraryScreen: UIViewController {
     
     @IBOutlet weak var SoundSeries: UIImageView!
     @IBOutlet weak var SoundButton: UIButton!
-    @IBOutlet weak var InkButton: UIButton!
-    @IBOutlet weak var InkSeries: UIImageView!
+    @IBOutlet weak var IORButton: UIButton!
+    @IBOutlet weak var IORSeries: UIImageView!
     
+    var selectedMainCollection: String?
     var selectedMainDocumentID: String?
     var selectedSubCollection: String?
     var selectedSubDocumentID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Apply rounded corners to images
-        SoundSeries.layer.cornerRadius = 10
-        SoundSeries.clipsToBounds = true
-        
-        InkSeries.layer.cornerRadius = 10
-        InkSeries.clipsToBounds = true
+        [SoundSeries, IORSeries].forEach {
+            $0?.layer.cornerRadius = 10
+            $0?.clipsToBounds = true
+        }
     }
 
     // Navigate to Sound Series
     @IBAction func soundSeriesTapped() {
-        selectedMainDocumentID = "NOQ2CtASlU26rXsfft8F"
-        selectedSubCollection = "SoundSeries"
-        selectedSubDocumentID = "w0PSVz3ALVF4uS6efaBa"
+        selectedMainCollection = "figurines"
+        selectedMainDocumentID = "The Sound Series"
+        selectedSubCollection = "The Trust"
+        selectedSubDocumentID = "pj7YLUYNYU2fKOfZd5yv"
         performSegue(withIdentifier: "showSkullPanda", sender: self)
     }
 
-    // Navigate to Ink Plum Series
-    @IBAction func inkButtonTapped() {
-        selectedMainDocumentID = "NOQ2CtASlU26rXsfft8F"
-        selectedSubCollection = "InkPlumes"
-        selectedSubDocumentID = "ZEvl3oj5SDY3AUX1qoHb"
+    // Navigate to Image Of Reality Series
+    @IBAction func IORButtonTapped() {
+        selectedMainCollection = "figurines"
+        selectedMainDocumentID = "The Image Of Reality"
+        selectedSubCollection = "The Philosophy"
+        selectedSubDocumentID = "yer09j8p8CrylQShDknU"
         performSegue(withIdentifier: "showSkullPanda", sender: self)
     }
 
     // Prepare data before transitioning to SkullPandaController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mainID = selectedMainDocumentID,
-              let subCol = selectedSubCollection,
-              let subID = selectedSubDocumentID else {
-            return
-        }
-
         if segue.identifier == "showSkullPanda",
-           let destinationVC = segue.destination as? SkullPandaController {
+           let destinationVC = segue.destination as? SkullPandaController,
+           let mainID = selectedMainDocumentID,
+           let subCol = selectedSubCollection,
+           let subID = selectedSubDocumentID {
             destinationVC.mainDocumentID = mainID
             destinationVC.subCollection = subCol
             destinationVC.subDocumentID = subID
