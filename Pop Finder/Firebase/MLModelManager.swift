@@ -3,7 +3,12 @@ import Foundation
 
 class MLModelManager {
     static let shared = MLModelManager()
-
+    let figurineNames: [Int: String] = [
+        0: "The Serenity",
+        1: "The Philosophy",
+        2: "The Trust",
+        3: "The Timelapse"
+    ]
     private init() {}
 
     func downloadMLModel(completion: @escaping (String?) -> Void) {
