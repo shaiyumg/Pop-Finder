@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Pop Finder
-//
-//  Created by Shaiyum Gurung on 14/01/2025.
-//
 import UIKit
 import Firebase
 
@@ -14,11 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //This is required to make Firebase run
         FirebaseApp.configure()
-        MLModelManager.shared.downloadMLModel { path in
-                    if let path = path {
-                        print("Model ready at \(path)")
-                    }
-                }
+        MLModelManager.shared.downloadMLModel { success in
+            if success {
+                print("ML Model successfully downloaded and ready.")
+            } else {
+                print("Failed to download ML Model.")
+            }
+        }
         return true
     }
 

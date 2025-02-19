@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         MLModelManager.shared.downloadMLModel { [weak self] path in
             DispatchQueue.main.async {
                 self?.mlModelActivityIndicator.stopAnimating()
-                if let path = path {
+                if path != nil {
                     self?.mlModelStatusLabel.text = "ML Model Installed"
                 } else {
                     self?.mlModelStatusLabel.text = "Failed to Install Model"

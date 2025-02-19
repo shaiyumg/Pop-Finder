@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26.511627906976745" y="3.218884120171674"/>
+            <point key="canvasLocation" x="-420" y="4"/>
         </scene>
         <!--SignUpScreen-->
         <scene sceneID="pjs-fk-P2B">
@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVl-cR-bB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26.511627906976745" y="710.72961373390558"/>
+            <point key="canvasLocation" x="-420" y="745"/>
         </scene>
         <!--Camera-->
         <scene sceneID="YGg-Lo-0bL">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPB-9B-LEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.39534883720933" y="1091.2017167381975"/>
+            <point key="canvasLocation" x="525" y="1627"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="Dkw-oY-IKn">
@@ -221,7 +221,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRk-hJ-9VQ">
-                                <rect key="frame" x="25" y="69" width="380" height="578"/>
+                                <rect key="frame" x="25" y="108" width="380" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe down to retake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-ub-yhj">
@@ -234,7 +234,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-Gn-Ayy">
                                 <rect key="frame" x="25" y="674" width="380" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="2bN-TS-Pyn">
+                                <rect key="frame" x="-138" y="35" width="426" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGV-OE-5cs">
+                                <rect key="frame" x="42" y="74" width="61" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz2-GO-Ktf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902.79069767441854" y="1825.1072961373391"/>
+            <point key="canvasLocation" x="1597.6744186046512" y="1627.4678111587984"/>
         </scene>
         <!--Library-->
         <scene sceneID="BcN-JM-Vaq">
@@ -290,6 +301,20 @@
                                 <rect key="frame" x="228" y="187" width="160" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More Series to be added soon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjJ-HK-HeY">
+                                <rect key="frame" x="95" y="819" width="242" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-kx-HPU">
+                                <rect key="frame" x="57" y="103" width="65" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vLM-g7-p8L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -305,12 +330,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrq-zW-ovU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806.9767441860465" y="700.42918454935625"/>
+            <point key="canvasLocation" x="1598" y="48"/>
         </scene>
         <!--MainScreen-->
         <scene sceneID="Nl2-tl-fWz">
             <objects>
-                <viewController id="1YY-Lb-la6" userLabel="MainScreen" sceneMemberID="viewController">
+                <viewController id="1YY-Lb-la6" userLabel="MainScreen" customClass="MainScreen" customModule="Pop_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1p3-78-azO">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,16 +357,46 @@
                                     <segue destination="iNk-OQ-wd0" kind="show" identifier="goToProfile" id="0fZ-Db-gbY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-Ci-ABd">
+                                <rect key="frame" x="152" y="356" width="122" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Tap to scan!">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="scanImageTapped:" destination="1YY-Lb-la6" eventType="touchUpInside" id="ZKK-s3-J5C"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hirono" translatesAutoresizingMaskIntoConstraints="NO" id="mpG-8c-z5Y">
+                                <rect key="frame" x="88" y="329" width="255" height="265"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B88-I1-CFg">
+                                <rect key="frame" x="45" y="119" width="92" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yKm-XV-riV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Social" image="person.2.fill" catalog="system" id="MZ3-cA-GfD"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="document.viewfinder.fill" catalog="system" id="MZ3-cA-GfD"/>
+                    <connections>
+                        <outlet property="scanButton" destination="eyh-Ci-ABd" id="tyr-FE-o6g"/>
+                        <segue destination="g7W-06-V1g" kind="show" identifier="showPhotoView" id="f9g-b7-ez3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUX-0S-wCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="x4W-ba-aQT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1746.9767441860465" y="3.8626609442060089"/>
+            <point key="canvasLocation" x="1597.6744186046512" y="824.67811158798293"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JJ2-va-pDo">
@@ -361,7 +416,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEE-qn-HqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="376"/>
+            <point key="canvasLocation" x="526" y="362"/>
         </scene>
         <!--ProfileViewController-->
         <scene sceneID="o7E-mF-aNd">
@@ -371,13 +426,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs5-2d-y5C">
-                                <rect key="frame" x="16" y="39" width="57" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8TL-OT-Lws">
                                 <rect key="frame" x="131" y="155" width="168" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -421,6 +469,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="Wp8-Wn-IyN">
+                                <rect key="frame" x="-143" y="42" width="426" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs5-2d-y5C">
+                                <rect key="frame" x="42" y="75" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpy-JV-cTE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -442,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m98-36-9wR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690.2325581395348" y="3.218884120171674"/>
+            <point key="canvasLocation" x="2695.8139534883721" y="824.67811158798293"/>
         </scene>
         <!--SoundSeries-->
         <scene sceneID="ICG-XI-p4B">
@@ -452,10 +511,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="Lqa-Rv-6fP">
-                                <rect key="frame" x="-119" y="65" width="426" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-Dn-VCT" customClass="figurineImageView" customModule="Pop_Finder" customModuleProvider="target">
                                 <rect key="frame" x="108" y="172" width="214" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -464,6 +519,17 @@
                                 <rect key="frame" x="129" y="328" width="172" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pop_mart" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-fi-mPt">
+                                <rect key="frame" x="-134" y="46" width="426" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oug-av-SdX">
+                                <rect key="frame" x="34" y="83" width="91" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -480,15 +546,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kN-qk-sUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593.953488372093" y="699.78540772532199"/>
+            <point key="canvasLocation" x="2695.8139534883721" y="47.639484978540779"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="f9g-b7-ez3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="IOR" width="467" height="416"/>
         <image name="SoundSeries" width="400" height="201"/>
         <image name="book.pages.fill" catalog="system" width="107" height="128"/>
         <image name="camera.shutter.button.fill" catalog="system" width="128" height="108"/>
-        <image name="person.2.fill" catalog="system" width="128" height="86"/>
+        <image name="document.viewfinder.fill" catalog="system" width="128" height="115"/>
+        <image name="hirono" width="500" height="500"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pop_mart" width="800" height="238.66667175292969"/>
         <namedColor name="AccentColor">
@@ -496,6 +566,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
