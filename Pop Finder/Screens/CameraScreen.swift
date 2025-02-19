@@ -81,7 +81,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhoto" {
             if let photoVC = segue.destination as? PhotoViewController {
-                photoVC.capturedImage = capturedImage
+                photoVC.scannedImage = capturedImage
             }
         }
     }
