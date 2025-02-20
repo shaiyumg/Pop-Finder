@@ -11,6 +11,8 @@ class LibraryScreen: UIViewController {
     var selectedMainDocumentID: String?
     var selectedSubCollection: String?
     var selectedSubDocumentID: String?
+    var selectedSecondSubCollection: String?
+    var selectedSecondSubDocumentID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,9 @@ class LibraryScreen: UIViewController {
         selectedMainDocumentID = "The Sound Series"
         selectedSubCollection = "The Trust"
         selectedSubDocumentID = "pj7YLUYNYU2fKOfZd5yv"
+        selectedSecondSubCollection = "The Serenity"
+        selectedSecondSubDocumentID = "hLJupmeFlZFz4e6vr6pP"
+
         performSegue(withIdentifier: "showSkullPanda", sender: self)
     }
 
@@ -37,19 +42,28 @@ class LibraryScreen: UIViewController {
         selectedMainDocumentID = "The Image Of Reality"
         selectedSubCollection = "The Philosophy"
         selectedSubDocumentID = "yer09j8p8CrylQShDknU"
+        selectedSecondSubCollection = "The Timelapse"
+        selectedSecondSubDocumentID = "M0l9Atg3w25eT70OD0vb"
+
         performSegue(withIdentifier: "showSkullPanda", sender: self)
     }
 
-    // Prepare data before transitioning to SkullPandaController
+    // Prepare for segue and pass all necessary data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSkullPanda",
            let destinationVC = segue.destination as? SkullPandaController,
            let mainID = selectedMainDocumentID,
            let subCol = selectedSubCollection,
            let subID = selectedSubDocumentID {
+
             destinationVC.mainDocumentID = mainID
             destinationVC.subCollection = subCol
             destinationVC.subDocumentID = subID
+
+            if let secondSubCol = selectedSecondSubCollection, let secondSubID = selectedSecondSubDocumentID {
+                destinationVC.secondSubCollection = secondSubCol
+                destinationVC.secondSubDocumentID = secondSubID
+            }
         }
     }
 }
