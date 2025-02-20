@@ -8,15 +8,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //This is required to make Firebase run
         FirebaseApp.configure()
-        MLModelManager.shared.downloadMLModel { success in
-            if success {
-                print("ML Model successfully downloaded and ready.")
-            } else {
-                print("Failed to download ML Model.")
+        // Check if model is already downloaded
+                let isModelDownloaded = UserDefaults.standard.bool(forKey: "MLModelDownloaded")
+
+                if !isModelDownloaded {
+                    MLModelManager.shared.downloadMLModel { success in
+                        if success {
+                            print("ML Model successfully downloaded and ready.")
+                            UserDefaults.standard.set(true, forKey: "MLModelDownloaded")
+                        } else {
+                            print("Failed to download ML Model.")
+                        }
+                    }
+                } else {
+                    print("ML Model already downloaded.")
+                }
+
+                return true
             }
-        }
-        return true
-    }
 
     // MARK: UISceneSession Lifecycle
 

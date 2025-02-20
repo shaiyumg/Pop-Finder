@@ -56,26 +56,40 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     // ML Model Download
     private func downloadMLModel() {
-        MLModelManager.shared.downloadMLModel { [weak self] path in
-            DispatchQueue.main.async {
-                self?.mlModelActivityIndicator.stopAnimating()
-                if path != nil {
-                    self?.mlModelStatusLabel.text = "ML Model Installed"
-                } else {
-                    self?.mlModelStatusLabel.text = "Failed to Install Model"
+        let isModelDownloaded = UserDefaults.standard.bool(forKey: "MLModelDownloaded")
+        
+        // Check if model is already downloaded
+        DispatchQueue.main.async {
+            self.mlModelActivityIndicator.stopAnimating()
+
+            if isModelDownloaded {
+                self.mlModelStatusLabel.text = "ML Model Installed"
+            } else {
+                self.mlModelStatusLabel.text = "Downloading Model..."
+                
+                MLModelManager.shared.downloadMLModel { [weak self] success in
+                    DispatchQueue.main.async {
+                        if success {
+                            self?.mlModelStatusLabel.text = "ML Model Installed"
+                            UserDefaults.standard.set(true, forKey: "MLModelDownloaded")
+                        } else {
+                            self?.mlModelStatusLabel.text = "Failed to Install Model"
+                        }
+                    }
                 }
             }
         }
     }
-    //Updates ML Model Progress on Profile Screen
+
+    // Updates ML Model Progress on Profile Screen
     @objc private func updateMLModelProgress(_ notification: Notification) {
-            if let progress = notification.userInfo?["progress"] as? Int {
-                DispatchQueue.main.async {
-                    self.mlModelStatusLabel.text = "Downloading Model: \(progress)%"
-                }
+        if let progress = notification.userInfo?["progress"] as? Int {
+            DispatchQueue.main.async {
+                self.mlModelStatusLabel.text = "Downloading Model: \(progress)%"
             }
         }
-    
+    }
+
     // Opens the image picker for the selected source type (camera or photo library)
     private func openImagePicker(sourceType: UIImagePickerController.SourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType) else {
