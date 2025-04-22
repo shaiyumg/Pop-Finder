@@ -68,6 +68,24 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "goToSignUp", sender: self)
     }
     
+    // Prefill email and password on the Signup screen when navigating
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "goToSignUp",
+              let signupVC = segue.destination as? SignUpScreen else {
+            return
+        }
+        // Ensure outlets are loaded before setting
+        signupVC.loadViewIfNeeded()
+
+        // Prefill with existing login inputs
+        if let email = usernameTextField.text, !email.isEmpty {
+            signupVC.emailTextField.text = email
+        }
+        if let password = passwordTextField.text, !password.isEmpty {
+            signupVC.passwordTextField.text = password
+        }
+    }
+    
     // Authenticate user and store username in UserDefaults
     func authenticateUser(email: String, password: String) {
         
@@ -160,23 +178,25 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     // Convert Firebase errors into user-friendly messages
     func getFirebaseLoginErrorMessage(_ error: Error) -> String {
-        let errorCode = (error as NSError).code
-        switch errorCode {
-        case AuthErrorCode.networkError.rawValue:
-            return "Network error. Please check your internet connection."
-        case AuthErrorCode.userNotFound.rawValue:
-            return "No account found with this email. Please sign up or try again."
-        case AuthErrorCode.wrongPassword.rawValue:
-            return "Incorrect password. Please try again or reset your password."
-        case AuthErrorCode.invalidEmail.rawValue:
-            return "Invalid email format. Please enter a valid email."
-        case AuthErrorCode.userDisabled.rawValue:
-            return "Your account has been disabled. Please contact support."
-        case AuthErrorCode.tooManyRequests.rawValue:
-            return "Too many attempts. Please try again later."
-        default:
-            return "An unknown error occurred. Please try again."
+        let nsError = error as NSError
+        if let authError = AuthErrorCode(rawValue: nsError.code) {
+            switch authError {
+            case .networkError:
+                return "Network error. Please check your internet connection."
+            case .userNotFound, .wrongPassword, .invalidCredential:
+                return "Incorrect login details. Please check your email and password."
+            case .invalidEmail:
+                return "Invalid email format. Please enter a valid email."
+            case .userDisabled:
+                return "Your account has been disabled. Please contact support."
+            case .tooManyRequests:
+                return "Too many attempts. Please try again later."
+            default:
+                return "An unknown error occurred. Please try again."
+            }
         }
+        // Fallback for non-auth errors
+        return "An unknown error occurred. Please try again."
     }
     
     // Displays an alert message to the user

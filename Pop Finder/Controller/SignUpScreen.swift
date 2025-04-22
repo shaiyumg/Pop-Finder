@@ -73,18 +73,32 @@ class SignUpScreen: UIViewController, UITextFieldDelegate {
         return nil
     }
 
-    // Register User and Store in Firestore
+    // Register User and Store in Firestore, then auto-login
     func registerUser(username: String, email: String, password: String) {
-        FirestoreManager.shared
-            .registerUser(
-                email: email,
-                password: password,
-                username: username
-            ) { success, errorMessage in
-            if success {
-                self.showAlert(message: "Account created successfully! 🎉", shouldNavigateBack: true)
-            } else {
+        FirestoreManager.shared.registerUser(email: email, password: password, username: username) { success, errorMessage in
+            // Handle failure
+            guard success else {
                 self.showAlert(message: errorMessage ?? "An error occurred. Please try again.")
+                return
+            }
+            // On success, fetch user profile and show success alert before segue
+            guard let uid = Auth.auth().currentUser?.uid else {
+                DispatchQueue.main.async {
+                    self.switchToMainScreen()
+                }
+                return
+            }
+            FirestoreManager.shared.fetchUser(uid: uid) { user in
+                if let user = user {
+                    UserDefaults.standard.set(user.username, forKey: "username")
+                }
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Success", message: "Account created successfully! 🎉", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                        self.switchToMainScreen()
+                    })
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -103,5 +117,20 @@ class SignUpScreen: UIViewController, UITextFieldDelegate {
             }
         }))
         present(alert, animated: true, completion: nil)
+    }
+
+    // Transition to the main TabBarController after signup/login
+    private func switchToMainScreen() {
+        guard let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
+              let window = sceneDelegate.window else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainTabBarController = storyboard.instantiateViewController(identifier: "Main") as? UITabBarController {
+            let transition = CATransition()
+            transition.type = .fade
+            transition.duration = 0.3
+            window.layer.add(transition, forKey: kCATransition)
+            window.rootViewController = mainTabBarController
+            window.makeKeyAndVisible()
+        }
     }
 }
