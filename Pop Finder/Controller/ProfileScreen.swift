@@ -8,9 +8,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var changePhotoButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    private let cloudName = "popfinder"
-    private let uploadPreset = "userPFP"
-    // Indicator shown while uploading a new profile image
     private let uploadIndicator = UIActivityIndicatorView(style: .large)
     @IBOutlet weak var mlModelStatusLabel: UILabel!
     @IBOutlet weak var mlModelActivityIndicator: UIActivityIndicatorView!
@@ -152,7 +149,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     private func uploadImageToCloudinary(image: UIImage, completion: @escaping (String?) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else { completion(nil); return }
-        let url = URL(string: "https://api.cloudinary.com/v1_1/\(cloudName)/image/upload")!
+        let url = URL(string: "https://api.cloudinary.com/v1_1/popfinder/image/upload")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let boundary = UUID().uuidString
@@ -161,7 +158,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Append upload preset
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"upload_preset\"\r\n\r\n".data(using: .utf8)!)
-        body.append("\(uploadPreset)\r\n".data(using: .utf8)!)
+        body.append("userPFP\r\n".data(using: .utf8)!)
         // Append image data
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"file\"; filename=\"profile.jpg\"\r\n".data(using: .utf8)!)
